@@ -1,0 +1,32 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <meta charset=""utf-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Password Generator</title>
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Password Geerator</h1>
+            <form method="POST">
+                <label for="length">Password length:</label>
+                <input type="number" id="length" name="length" min="32" value="8" required>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="uppercase" checked> Include Upeercase</label>
+                    <label><input type="checkbox" name="lowercase" checked>Include Lowercase</label>
+                    <label><input type="checkbox" name="digits" checked>Include special Charecters</label>
+                    <label><input type="checkbox" name="special_chars">Include Special Caharcters</label>
+                </div>
+                <button type ="submit"> Generate Password</button>
+            </form>
+            {% if password %}
+            <div class="result">
+                <h2>Generated Password: </h2>
+                <p>{{password}}</p>
+            </div>
+            {%endif%}
+        </div>
+    </body>
+</html>
